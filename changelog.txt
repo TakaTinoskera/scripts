@@ -1,0 +1,432 @@
+AirOS6 Firmware Changelog
+====
+Supported products
+  * Bullet M2/M5/Titanium
+  * Rocket M2/M2 Titanium/M3/M365/M900/M5/M5 GPS/M5 Titanium/M6
+  * NanoStation M2/M3/M365/M5/M6
+  * NanoStation Loco M2/M900/M5
+  * NanoBridge M2/M3/M365/M900/M5
+  * AirGrid M2/M5/HP/HP New
+  * PowerBridge M3/M365/M5/M10
+  * PicoStation M2
+  * AirRouter/HP
+  * PowerAP N
+  * LiteBeam M5
+  * NanoBeam M2/M5  
+  * AirGrid M5 HP
+  * NanoStation M5
+  * NanoStation M5 Loco
+  * Rocket M5/Titanium
+
+====
+
+
+6.1.9 (XM/XW/TI) Changelog / Jan 11, 2019
+====
+
+- airMAX-ac FF: Improved station connection
+- airMAX-ac FF: Wrong operation when aggregation is disabled
+
+Licensed firmwares updates:
+- Added Licensed selection in country list for WORLD version products
+- Added Canada (Licensed) selection in country list
+
+Regulatory:
+- Update channel plan for India according to the new regulation valid from 01/01/2019
+
+Improvements:
+- WDS improvements for XM devices
+- airOS stability improvements
+- UNMS agent upgrade to v0.5.2
+- Update dropbear to v2018.76
+
+Fixes:
+- Fix: Reduce DFS false positive events
+- Fix: Return back Maximum TX Data Rate selection of MCS 0, MSC 1 for 1x1 and 2x2 devices and MCS 8, MCS 9 for 2x2 devices
+- Fix: Set CPU speed to 400MHz for M900 devices
+- Fix: Sometimes traffic may stop when WDS is disabled
+- Fix: M900 issues (possible fix)
+
+WEB UI:
+- WEB UI: Fix GMT (Western Europe Time) and add British Time Zone
+
+
+6.1.8 (XM/XW/TI) Changelog / Sep 26, 2018
+====
+
+New:
+- New: IPv6 discovery support
+- New: Enable IPv6 after Reset to Factory Defaults
+- New: UNMS agent upgrade to v0.4.0
+
+Regulatory:
+- Add Paraguay country code
+- Add Swaziland country code
+- Add missing frequencies 5170 MHz and 5175 MHz for HT20 for New Zealand
+- Enable UNII-1 and UNII-2A bands for Australia
+- Enable UNII-1 indoor bands for Canada
+- Enable UNII-2C indoor bands for Kazakhstan
+- Extend UNII-3 band up to 5875 MHz for Russia
+- Enable indoor channels for Brazil: 5150-5250 MHz, 5250-5350 MHz
+- Update channel plan for Bahrain
+- Update Lithuania regulatory
+
+Enhancements:
+- Improved CCQ calculation and reporting
+- airOS stability improvements
+
+Fixes:
+- Fix: Sometimes station stops passing traffic
+- Fix: M900 issues (possible fix)
+
+WEB UI:
+- WEB UI: Fix country code selection issue
+
+
+6.1.7 (XM/XW/TI) Changelog / May 25, 2018
+====
+
+New:
+- New: Support for the new TDD Framing Flexible (NEW) mode (airMAX AC AP on v8.5.4 required)
+- New: TDD Framing/GPS Sync support for 10MHz in AP PtMP airMAX Mixed mode (airMAX AC AP on v8.5.4 required)
+- New: IPV6 addresses support in the Ping tool
+- New: Daylight Saving Time support
+- New: ULink, UNMS, UCRM icons on Login page
+- New: UNMS agent upgrade to v0.3.12
+- New: Updated EULA and Privacy Policy agreements
+
+Regulatory updates:
+- Updated New Zealand allowed frequencies for 5GHz
+
+Improvements:
+- airOS stability improvements
+
+Fixes:
+- Fix: Allow configuring local or static IPv6 address on LAN even IPv6 is not set on WAN
+- Fix: Need restart dnsmasq service after IPV6 gets DNS from DHCP
+- Fix: Make DHCPv6 Unique Identifier (DUID-UUID) permanent
+- Fix: DNS configuration when DHCP on WAN is selected
+- Fix: No internet access for LAN clients with specific DHCP server and DNS proxy configurations (router mode)
+- Fix: Wrong airMAX Quality reporting of 1x1 chain devices
+- Fix: Station cannot connect to 40MHz AP for New Zealand country
+- Fix: Reduce IPv6 server and client syslog messages
+
+WEB UI:
+- WEB UI: Remote stats are missing in case "Extra reporting" is enabled but related cfg key is missing
+- WEB UI: airMAX Capacity reporting issue in VHT10 mode
+- WEB UI: Various small UI improvements
+
+
+6.1.6 (XM/XW/TI) Changelog / March 9, 2018
+====
+
+New:
+- New: Support for the new Wireless Network Protection feature. This feature is enabled on AP and protects the airMAX network against de-authentication attacks. airMAX AC and airMAX M client devices are supported but they must be used with an airMAX AC AP. We recommend upgrading client devices first before enabling this feature on AP.
+- New: DNS settings on WAN for IPv6
+- New: UNMS status icon on the top of airOS
+- New: UNMS agent upgrade to v0.3.10
+
+- airMAX-ac FF: Support for the new ReSE (Receive Signal Enhancement) feature
+- airMAX-ac FF: Connection issue to AC AP when RTS threshold is ON and set to a low value
+- airMAX-ac FF: Fix for PPPOE session disconnects in FF mode
+
+Regulatory updates:
+- Extended UNII-3 band up to 5725-5850 MHz for United Kingdom
+
+Improvements:
+- airMAX-ac: QOS improvements for un-encrypted PPPOE configurations
+- airOS stability improvements
+- airOS security improvements
+
+Fixes:
+- Fix: Speed Test reporting issues
+- Fix: Maximum TX Data Rate selection (restricted to the range of MCS 2 - MCS 7 for 1x1 & 2x2 devices and MCS 10 - MCS 15 for 2x2 devices)
+- Fix: Center frequencies, channel width and TX power values for AC2 agent
+
+
+6.1.4 (XM/XW/TI) Changelog / January 19, 2018
+====
+
+New:
+- New: TDD Framing/GPS Sync support for AirMAX 2AC and M2 devices (2AC AP required)
+- New: Upgrade MiniUPnP to v2.0 & restrict UPnP to >=1024 ports
+- New: OpenSSL update to v1.0.2m
+
+Regulatory updates:
+- UNII-2 channels support for IsoStation M
+
+- airMAX-ac FF: VoIP improvements
+- airMAX-ac FF: Sometimes station stops passing data 
+- airMAX-ac FF: Auto distance not working when stations are connected to AC AP
+
+- airOS stability improvements
+
+Fixes:
+- Fix: Unexpected reboot on XW after radar detection
+
+WEB UI:
+- WEB UI: Fixed invalid date next to UNMS status on Safari
+
+
+6.1.3 (XM/XW/TI) Changelog / November 17, 2017
+====
+
+New:
+- New: TDD Framing/GPS Sync support for XM/TI devices
+- New: UNMS agent upgrade to v0.1.0
+
+Improvements:
+- airMAX-ac FF: Performance and stability improvements 
+- AirOS stability improvements
+- AirOS security improvements including CVE-2017-13704, CVE-2017-14106, CVE-2017-14491
+
+Fixes:
+- airMAX-ac FF: NBM5 lopsided signal strength fix
+- Fix: Channel selection logic on XW after radar detection (sometimes data rate stuck at 54Mbps or channel width changes from 40MHz to 20MHz)
+- Fix: Station TX power is set to 0dBm after disabling Automatic Power Control on AC AP (airMAX AC Mixed mode)
+- Fix: Sometimes station stuck in association state
+- Fix: SNMP get-next-request issue
+- Fix: AP TX Power is set to 0dBm after disabling Automatic Power Control (PTP mode)
+- Fix: Missing frequency ranges in airView for FCC SKUs
+
+WEB UI:
+- WEB UI: Indication next to TX Power that ATPC is enabled on AC AP (airMAX AC Mixed mode)
+
+
+6.1.2 (XM/XW/TI) Changelog / October 17, 2017
+====
+
+- Fix: Security patch for the WPA2 vulnerability called KRACK
+
+
+6.1.1 (XM, TI) Changelog / October 13, 2017
+====
+
+Important:
+- TDD Framing/GPS Sync support is not yet available for XM/TI devices
+
+Improvements:
+- airOS stability improvements
+
+Fixes:
+- Fix: Sometimes home routers fails to renew DHCP lease or DNS proxy stops working (use same dnsmasq version as in airOS8)
+- Fix: Stations fail to connect to AP after 25 days connection drop (AP restart required)
+- Fix: IPv6 DHCP multiple LAN issue
+
+
+6.1.1 (XW) Changelog / October 6, 2017
+====
+
+- Fix: High memory usage when UNMS is enabled
+
+
+6.1.0 (XW) Changelog / September 29, 2017
+====
+
+Important:
+- Maximum supported CPE/Station count limited to 60 while in GPS Sync mode
+
+New:
+- New: TDD Framing/GPS Sync support for 20/40MHz in AP PtMP airMAX Mixed mode (XW, airMAX AC AP on v8.4.0 required)
+
+Improvements:
+- airOS stability improvements
+
+Fixes:
+- Fix: Sometimes home routers fails to renew DHCP lease or DNS proxy stops working (use same dnsmasq version as in airOS8)
+- Fix: Stations fail to connect to AP after 25 days connection drop (AP restart required)
+- Fix: IPv6 DHCP multiple LAN issue
+
+
+6.0.7 (XM/XW/TI) Changelog / September 8, 2017
+====
+
+Important: 
+airOS v6.0.7 will allow only signed firmware to be loaded. Signed versions of the following airOS versions are available: v5.6.15, v6.0.3, v6.0.4, v6.0.6
+All future airOS versions will be signed in this way and not allow unsigned firmware to be loaded except via TFTP.
+
+New:
+- New: Add support for RFC 6598 (CGN) private IP responses via Discovery
+- New: UNMS (Ubiquiti Networks Management System) support
+- New: PPPoE LCP configuration via system.cfg
+- New: Add Google Play and Appstore images on Login page
+
+Fixes:
+- Fix: Stability fixes (random XM series device reboots)
+- Fix: TX reporting issues in Speed Test tool
+- Fix: Duplicate RADIUS Accounting session ID
+- Fix: Ignore server certificate validation on client side if CA not present
+- Fix: Whitelist fixup_cfg_diff.txt file in persistent directory
+- Fix: ATPC issue on SISO devices
+- Fix: Removing WDS peer doesn't make an effect till AP reboot
+- Fix: airView is broken
+- Fix: AP-Repeater mode issues
+- Fix: airOS security improvements
+
+- WEB UI: Channel/Frequency reporting issue during scan on the Main Page
+- WEB UI: DHCP Server Relay address does not show up after saving changes
+- WEB UI: Connection issue to airGateway
+
+
+6.0.6 (XM/XW/TI) Changelog / July 5, 2017
+====
+
+New:
+- Signed firmware support (Users are not able to downgrade below v6.0.6 unless using TFTP)
+- Upgrade libpcap to 1.8.1
+- Additional statistics for AC2 agent
+
+Improvements:
+- NanoStation Loco model name changed to NanoStation loco
+- airOS security and stability improvements
+
+Regulatory updates:
+- Updated 2GHz frequency list: removed 2464MHz for FCC and 2474MHz for EU
+- Added 40 MHz channel width for Saudi Arabia
+
+Fixes:
+- Fix: AP/Station can't reconnect after changing SSID and Security
+- Fix: Make CoS values priority on by default on bridge with VLAN ports
+- Fix: Firewall IPv4 and IPv6 both enabled on bridge link don't work
+- Fix: Show DHCP client hostname in DHCP Leases in case hostname contains special symbols
+- Fix: Revert Device Name strictness for DHCP Client (escape only hashtag '#' symbol which breaks DHCP Client operation)
+- Fix: AMC and AMQ are reporting far too high for 1x1 chain XM clients in 2AC Mixed mode
+- Fix: Issues with channel width selection on Wireless tab after reset to default and upgrade for M365 models
+- Fix: Invalid channel width selection for Japan when changing wireless mode from Station to AP
+- Fix: RADIUS Accounting fixes: duplicated Acct-Session-Id, incorrect Acct-Input-Octets and Acct-Output-Octets values
+- Fix: Missing statistics for AC2 agent if PPPoE interface is configured on Wireless interface
+- Fix: syslogd crash when remote TCP log is enabled
+
+- WEB UI: Cannot configure some IPv6 settings on VLANs
+
+
+6.0.4 (XM/XW/TI) Changelog / May 5, 2017
+====
+
+- airOS security improvements
+
+Fixes:
+- Fix: (XM) Stations can't connect back to AP after connection was dropped. AP reboot is required
+- Fix: Error 403 if session cookie doesn't match original IP
+- Fix: Limit discovery response to queries from private subnets or multicast/broadcast
+
+
+6.0.3 (XM/XW/TI) Changelog / March 29, 2017
+====
+
+Fixes:
+- Fix: Can't change Output Power, Frequency and Frequency List without device reboot
+
+
+6.0.2 (XM/XW/TI) Changelog / March 28, 2017
+====
+
+New:
+- New: OpenSSL update to v1.0.2k
+- New: libevent update to v2.1.8
+- New: libssh2 update to v1.8.0
+
+Fixes:
+- Fix: Security fixes and improvements
+- Fix: Data rate module is not changed until device reboot
+- Fix: In rare cases configuration is not saved
+- Fix: Update x509 v3 to support new extensions used for WPA2 enterprise
+
+
+6.0.1 (XM/XW/TI) Changelog / March 17, 2017
+====
+
+New:
+- New: Update tcpdump to v4.9.0
+
+
+Regulatory updates:
+- Revised UNII Rules activation for IC/Canada ( ​https://www.ubnt.com/iccoderequest/ )
+- Updated New Zealand allowed frequencies for 5GHz
+- Removed DFS enable/disable option for Australia
+
+
+airOS security improvements:
+- Command injection in Ping test tool
+- OpenSSL update to to v1.0.2j
+- Remove unused WMM related code
+- Other security fixes and improvements
+
+
+Fixes:
+- Fix: airOS stability improvements
+- Fix: XM 2.4GHz clients are disconnecting in airMAX AC Mixed mode
+- Fix: Station fails re-authentication with AP when the same SSID is used for other APs
+- Fix: Applying configuration changes fails after changing SSID and Security from WPA2 to OPEN
+
+
+6.0 (XM/XW/TI) Changelog / December 19, 2016
+====
+
+Important Note:
+- Version 6.0 is recommended for PTMP Mixed mode usage (M clients connected to AC AP)
+
+New:
+- New: airMAX AC client mode support (AP must be upgraded to airOS8 and PTMP Mixed mode selected)
+- New: Don't do full restart on most configuration changes
+- New: Added signal per chain reporting for AirControl v2
+- New: Add kernel crashlog into Support info for better troubleshooting
+- New: Added Crash log reporting to Ubiquiti Networks for better troubleshooting
+- New: Added "default-mru" key in ppp/options file to disable MRU negotiation
+- New: Added MRU negotiation Enable/Disable option
+- New: Store configuration backup if upgrade fixer is changing it
+- New: Enable Block management access on WAN when switching to Router mode
+- New: Dynamic DNS configuration via system.cfg
+- New: Added option allowing LLDP packets to pass wireless bridge
+- New: DHCP Option configuration via system.cfg
+- New: Update dropbear to v2016.74
+- New: OpenSSL update to v1.0.2h
+- New: lighttpd update to v1.4.39
+- New: Linux kernel update to v2.6.32.71
+
+
+
+Regulatory Updates:
+- ETSI EN 301 893 v1.8.1 adaptivity improvements
+- Update 5GHz band for China: add 5180-5240MHz and 5260-5320MHz channels
+- Revised UNII Rules activation for NanoStation M5, NanoStation Loco M5 and LiteBeam M5 23
+
+
+Improvements:
+- Reduce false positives and misclassifications of invalid DFS radar events
+- airMAX security improvements
+- MAC authentication process improvement while RADIUS server is not reachable
+- Various vulnerability/security changes
+- Stability improvements
+- Performance issue when XM device runs out of memory
+
+
+Fixes:
+- Fix: Set CPU speed to 400MHz to eliminate out of band emission for Verizon (XM series)
+- Fix: AP drops stations when another AP with the same SSID is running on the same frequency
+- Fix: Stability fixes (random AP/Station reboots)
+- Fix: RADIUS MAC Authentication fails in case server isn't reachable
+- Fix: Can't SSH to Mikrotik devices
+- Fix: Do not load NAT helpers modules when NAT is disabled
+- Fix: DNS Proxy binds not just to LAN but to WAN port also
+- Fix: MSS Clamping for PPPoE is not enabled when Management VLAN is configured
+- Fix: Generate unique SSL certificate for each device
+- Fix: Generate SSL certificate start date from firmware build timestamp
+- Fix: Crontab does not work with multiple scheduler/commands
+- Fix: AirMax Capacity reports over 100 percent with Legacy devices
+- Fix: Site Survey doesn't report full list of available APs
+- Fix: Show full EdgeSwitch firmware version in Device Discovery
+- Fix: Device Name with not allowed symbols breaks DHCP
+- Fix: Impossible to log in with SSH authorisation keys
+- Fix: French language translation issue
+- Fix: Change antenna reporting to Chain0/Chain1 instead of Vertical/Horizontal for all Rocket models
+- Fix: Wrong TX Power reporting from command line "iwlist ath0 txpower" (XW)
+- Fix: DHCPv6 doesn't after PPPoE session reinitialisation
+- Fix: Revised UNII Rules activation/deactivation for products manufactured after 06/01/2016 (due to changes in the FCC rules)
+
+- WEB UI: Updated Chinese translation
+- WEB UI: More statistics on Main page (CPU/Memory usage)
+- WEB UI: Added DFS Events monitoring list on the Main page
+- WEB UI: Switch antenna Chain0/Chain1 mapping to Horizontal/Vertical for PowerBeams
+
+
